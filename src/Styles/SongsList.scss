@@ -1,0 +1,21 @@
+.songs {
+    width: 100%;
+    padding: 10px;
+    .song_card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ffffff;
+        padding: 10px;
+        img {
+            width: 40px;
+            height: 40px
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}

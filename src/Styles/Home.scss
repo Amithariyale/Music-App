@@ -1,0 +1,36 @@
+.movies {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    padding: 10px;
+
+    .movie_card {
+        width: 250px;
+        height: 400px;
+        padding: 25px;
+        background-color: rgba(73, 72, 72, 0.447);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        img {
+            width: 200px;
+            height: 80%;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #ffffff;
+        }
+
+        span {
+            color: gray;
+        }
+
+    }
+
+    .movie_card:hover {
+        transform: scale(1.05);
+    }
+
+}
