@@ -14,10 +14,8 @@
     .main_section {
         background-color: rgb(13, 13, 13);
         overflow-y: scroll;
-
+        display: flex;
+        justify-content: center;
     }
 
-    .player {
-        background-color: #5d4e4e;
-    }
 }

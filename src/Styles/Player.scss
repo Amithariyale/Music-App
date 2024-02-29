@@ -1,0 +1,50 @@
+.player {
+    background-color: rgb(19, 42, 32);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .song_details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ffffff;
+        gap: 20px;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    audio {
+        min-width: 60%;
+        border: none;
+
+    }
+
+    audio::-webkit-media-controls-panel {
+        background-color: rgb(19, 42, 32);
+        color: #8f7e7e;
+    }
+
+    audio::-webkit-media-controls-play-button {
+        color: red;
+    }
+
+    audio::-webkit-media-controls-volume-slider {
+        color: #ccc;
+    }
+
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    .like_btn {
+        cursor: pointer;
+    }
+
+}
