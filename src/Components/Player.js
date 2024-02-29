@@ -4,7 +4,6 @@ import "../Styles/Player.scss";
 
 function Player() {
   const activeSong = useSelector((state) => state.activeSong);
-  console.log(activeSong);
   const audioRef = useRef(null);
   const dispatch = useDispatch();
 
@@ -38,6 +37,8 @@ function Player() {
 
   const fileAddress = `${window.location.origin}/${songDetails.fileAddress}`;
   const imageUrl = `${window.location.origin}/${songDetails.imageUrl}`;
+
+  
   return (
     <div className="player">
       <div className="song_details">

@@ -4,43 +4,33 @@ import { useSelector } from "react-redux";
 
 function SongCard(props) {
   const { song, index, togglePlayPause, toggleLikeDislike } = props;
-  // console.log(song);
+
   const [playBtn, setPlatBtn] = useState(false);
-  const [playAndPause, setPlayAndPause] = useState(false);
   const isLiked = useSelector((state) => state.likedSongs.includes(song.id));
   const activeSong = useSelector((state) => state.activeSong);
+
+  const playAndPause = activeSong?.play && activeSong.id === song.id;
+
   const imageUrl = `${window.location.origin}/${song.imageUrl}`;
 
-  // console.log(activeSong?.play);
   const togglePlayBtn = () => {
     setPlatBtn(!playBtn);
   };
 
-  useEffect(() => {
-    setPlayAndPause(activeSong?.id === song.id ? !playAndPause : false);
-  }, [activeSong]);
   return (
     <div
-      className="song_card"
+      className={`song_card ${activeSong?.id === song.id ? "active" : ""}`}
       onMouseEnter={togglePlayBtn}
       onMouseLeave={togglePlayBtn}
-      style={{backgroundColor:playAndPause?"rgb(47, 57, 57)":"rgb(43, 37, 37)"}}
     >
       <div>
         <div className="play_box">
-          {playAndPause ? (
-            <span
-              className="material-icons"
-              onClick={() => togglePlayPause(song.id)}
-            >
-              pause
-            </span>
-          ) : playBtn ? (
+          {playBtn ? (
             <span
               className="material-icons play_btn"
               onClick={() => togglePlayPause(song.id)}
             >
-              play_arrow
+              {playAndPause ? "pause" : "play_arrow"}
             </span>
           ) : (
             <span>{index + 1}</span>
