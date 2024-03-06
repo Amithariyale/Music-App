@@ -2,29 +2,40 @@ import { legacy_createStore as createStore } from "redux";
 import { movies, songs } from "../Data/Data";
 import { ActionType } from "./Actions";
 
-const intialState = { movies, songs, activeSong: null, likedSongs: [] };
-const reducer = (state = intialState, action) => {
+let savedState = JSON.parse(localStorage.getItem("musicStore"));
+if (savedState) {
+  savedState = {
+    ...savedState,
+    activeSong: { ...savedState.activeSong, play: false },
+  };
+}
+const intialState = {
+  movies,
+  songs,
+  activeSong: { id: 100, play: true },
+  likedSongs: [],
+};
+const reducer = (state = savedState || intialState, action) => {
   if (action.type === ActionType.TOGGLE_LIKE_DISLIKE) {
     const songId = action.payload;
     if (state.likedSongs.includes(songId)) {
-      return {
+      state = {
         ...state,
         likedSongs: state.likedSongs.filter((id) => id !== songId),
       };
-    } else return { ...state, likedSongs: [...state.likedSongs, songId] };
-  }
-  if (action.type === ActionType.TOGGLE_PLAY_PAUSE) {
+    } else state = { ...state, likedSongs: [...state.likedSongs, songId] };
+  } else if (action.type === ActionType.TOGGLE_PLAY_PAUSE) {
     const songId = action.payload;
     if (state.activeSong?.id === songId) {
-      return {
+      state = {
         ...state,
         activeSong: { id: songId, play: !state.activeSong.play },
       };
-    } else return { ...state, activeSong: { id: songId, play: true } };
+    } else state = { ...state, activeSong: { id: songId, play: true } };
   }
+  localStorage.setItem("musicStore", JSON.stringify(state));
   return state;
 };
 
 const store = createStore(reducer);
-
 export default store;

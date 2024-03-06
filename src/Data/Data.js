@@ -1,36 +1,40 @@
 export const movies = [
   {
     title: "Animal",
-    description: "Some random description",
-    releaseDate: "17 Dec 2014",
+    description: "The son of a wealthy, powerful industrialist returns...",
+    releaseDate: "1 Dec 2023",
     imageUrl: "images/animal.jpg",
     id: 3001,
   },
   {
     title: "Kabir singh",
-    description: "Some random description",
-    releaseDate: "22 Mar 2019",
+    description:
+      "Kabir, a genius yet hostile medical student, falls in love with Preeti from his college...",
+    releaseDate: "21 June 2019",
     imageUrl: "images/kabir singh.webp",
     id: 3002,
   },
   {
     title: "Teri Baaton me eisa uljha jiya",
-    description: "Some random description",
-    releaseDate: "13 Feb 2016",
+    description:
+      "Teri Baaton Mein Aisa Uljha Jiya is a 2024 Indian science fiction romantic comedy...",
+    releaseDate: "9 February 2024",
     imageUrl: "images/TBMAUJ.jpg",
     id: 3003,
   },
   {
     title: "Tu Jhoothi Mein Makkar",
-    description: "Some random description",
-    releaseDate: "13 Feb 2016",
+    description:
+      "Mickey, a carefree businessman and womaniser, helps couples break up...",
+    releaseDate: "8 March 2023",
     imageUrl: "images/TJMM.jpg",
     id: 3004,
   },
   {
     title: "Heeriye",
-    description: "Some random description",
-    releaseDate: "13 Feb 2016",
+    description:
+      "The song is sung by Arijit Singh and Jasleen Royal...",
+    releaseDate: "25 July 2023",
     imageUrl: "images/Heeriye.jpg",
     id: 3005,
   },

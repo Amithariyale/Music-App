@@ -1,46 +1,102 @@
-.songs {
+.main_song_container {
+    background-image: linear-gradient(to bottom, rgba(93, 93, 132, 0.747), rgba(0, 0, 0, 0.768));
     width: 100%;
     height: 100%;
-    padding: 40px 20px;
-    background-image: linear-gradient(to bottom, rgba(93, 93, 132, 0.747), rgba(0, 0, 0, 0.768));
+    padding: 50px 20px;
+    overflow-y: scroll;
 
-    .song_card {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    h2 {
         color: #ffffff;
-        background-color: rgb(43, 37, 37);
-        padding: 10px 20px;
-        border-radius: 10px;
-        margin: 8px 0;
-        transition: background-color 0.2s ease-in-out;
+        padding: 20px 0;
+    }
+
+    .movie {
+        width: 100%;
+        padding: 20px;
+        background-image: linear-gradient(to right, rgba(93, 128, 132, 0.747), rgba(0, 0, 0, 0.768));
+        border-radius: 15px;
+        color: #ffffff;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        box-shadow: 0 0 50px 10px rgb(85, 84, 84);
+
+        >div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 800;
+
+            h1 {
+                font-size: 4rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            span {
+                color: rgb(158, 156, 156);
+
+            }
+        }
 
         img {
-            width: 40px;
-            height: 40px
-        }
+            width: 30vh;
 
-        div {
+        }
+    }
+
+    .songs {
+        width: 100%;
+        // height: 100%;
+
+        .song_card {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            color: #ffffff;
+            background-color: rgb(53, 73, 70);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin: 8px 0;
+            transition: background-color 0.2s ease-in-out;
+
+            img {
+                width: 40px;
+                height: 40px
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .play_box {
+                width: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
         }
 
-        .play_box {
-            width: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .song_card:hover {
+            background-color: rgb(86, 124, 89);
+            cursor: pointer;
         }
 
+        .active {
+            background-color: rgb(86, 124, 89);
+        }
+    }
+}
+
+@media screen and (max-width:750px) {
+    .main_song_container >h1 {
+        font-size: 10px;
     }
 
-    .song_card:hover {
-        background-color: rgb(47, 57, 57);
-        cursor: pointer;
-    }
 
-    .active {
-        background-color: rgb(47, 57, 57);
-    }
 }

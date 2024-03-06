@@ -3,14 +3,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 5px 20px;
 
     .song_details {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         color: #ffffff;
         gap: 20px;
+
+        // p {
+        //     white-space: wrap;
+        // }
 
         img {
             width: 50px;
@@ -21,7 +26,7 @@
     audio {
         min-width: 60%;
         border: none;
-
+        // display: none;
     }
 
     audio::-webkit-media-controls-panel {
@@ -29,22 +34,54 @@
         color: #8f7e7e;
     }
 
+    #play_btn {
+        display: none;
+        background-color: #8f7e7e;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
     audio::-webkit-media-controls-play-button {
-        color: red;
+        color: #ffffff;
+
     }
 
-    audio::-webkit-media-controls-volume-slider {
-        color: #ccc;
-    }
+    // audio::-webkit-media-controls-volume-slider {
+    //     background-color: #ccc;
+    //     display: none;
+    // }
 
-    audio::-webkit-media-controls-current-time-display,
-    audio::-webkit-media-controls-time-remaining-display {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-    }
+
+    // audio::-webkit-media-controls-current-time-display,
+    // audio::-webkit-media-controls-time-remaining-display {
+    //     font-family: Arial, sans-serif;
+    //     font-size: 14px;
+    //     color: #ffffff;
+    //     // display: none;
+    // }
 
     .like_btn {
         cursor: pointer;
     }
 
 }
+
+@media screen and (max-width:500px) {
+    .player {
+        .song_details {
+            display: none;
+        }
+
+        // #play_btn {
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        // }
+
+        // audio {
+        //     display: none;
+        // }
+    }
+}
+
+// audio::-webkit-media-controls-

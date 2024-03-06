@@ -10,12 +10,19 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 16fr 2fr;
+
     .main_section {
+        width: 100%;
         background-color: rgb(13, 13, 13);
         overflow-y: scroll;
         display: flex;
         justify-content: center;
-        
+
+    }
+
+    .liked {
+        color: red;
+        cursor: pointer;
     }
 
 }

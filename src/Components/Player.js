@@ -33,21 +33,32 @@ function Player() {
       activeSong.play ? audioRef.current.play() : audioRef.current.pause();
   }, [activeSong]);
 
+  const togglePlayPause = (songId) => {
+    console.log(songId);
+    dispatch({ type: "TOGGLE_PLAY_PAUSE", payload: songId });
+  };
   if (!activeSong) return <div className="player">Please Select a song</div>;
 
   const fileAddress = `${window.location.origin}/${songDetails.fileAddress}`;
   const imageUrl = `${window.location.origin}/${songDetails.imageUrl}`;
 
-  
   return (
     <div className="player">
       <div className="song_details">
         <img src={imageUrl} alt="" />
         <p>{songDetails.title}</p>
       </div>
-      <audio controls color="white" ref={audioRef} key={activeSong.id}>
+      <audio controls ref={audioRef} key={activeSong.id}>
         <source src={fileAddress} />
       </audio>
+      <div id="play_btn" >
+        <span
+          className="material-icons"
+          onClick={() => togglePlayPause(activeSong.id)}
+        >
+          {activeSong.play ? "pause" : "play_arrow"}
+        </span>
+      </div>
       <div>
         <span
           className="material-icons like_btn"
