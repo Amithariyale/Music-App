@@ -18,7 +18,6 @@
         color: #ffffff;
         display: flex;
         gap: 20px;
-        flex-wrap: wrap;
         box-shadow: 0 0 50px 10px rgb(85, 84, 84);
 
         >div {
@@ -94,8 +93,18 @@
 }
 
 @media screen and (max-width:750px) {
-    .main_song_container >h1 {
-        font-size: 10px;
+    .main_song_container {
+
+        .movie {
+            flex-wrap: wrap;
+            h1 {
+                font-size: 2.6rem !important;
+            }
+
+            h3 {
+                font-size: 1.2rem !important;
+            }
+        }
     }
 
 

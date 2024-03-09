@@ -24,6 +24,7 @@ const Sidebar = forwardRef((props, ref) => {
         close
       </span>
       <div className="liked_song_container">
+        <h3>Liked Songs</h3>
         {songs.length ? (
           songs.map((songId) => {
             return (
